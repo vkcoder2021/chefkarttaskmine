@@ -45,28 +45,42 @@ export default class Menu extends Component {
       
     return (
       <div>
-          <div className='head'>
-               Select Dishes
+            <div className="Top">
+            <div className="dates-container default">
+              <div className="timing">
+              <div className="date">
+              <div className="date-icon"></div>
+              <div className="date-content">21 May 2021</div>
+            </div>
+          <div className="time">
+            <div className="time-icon"></div>
+            <div className="time-content">10:30 Pm - 12:30pm</div>
           </div>
-          <hr></hr>
-          <div className="header">
-              <h2> 21 May 2021</h2>
-              <h2>10:30 Pm -12:30 Pm</h2>
+        </div>
+      </div>
 
-          </div>
-          <div>
-              <h2 className="categories1">Bengali</h2>
-              <h2 className="categories2">Indian</h2>
-              <h2 className="categories3">Punjabi</h2>
-              <h2 className="categories4">English</h2>
-              <h2 className="categories5">Spanish</h2>
-          </div>
-          <div className="popularDishes">
+      <div className="options-container ">
+        <ul className="options-lists">
+          <li className="choice-list">Italian</li>
+          <li className="choice-list">Indian</li>
+          <li className="choice-list">Indian</li>
+          <li className="choice-list">Indian</li>
+        </ul>
+      </div>
+    </div>
+    
+          <div className="Popular default">
               {this.state.popularDishes.map((item) => (
-                  <div className="item" key ="{item.id}">
-                  <h1>Popular Dishes</h1>
-                  <img src={item.image} alt="" />
-                  <h3>{item.name}</h3>
+                  <div key ="{item.id}">
+                   <div className="Popular-heading">Popular Dishes</div>
+                  <ul>
+                     <li className="Popular-item">
+                    
+                       <img src={item.image} alt="" />
+                    
+                     </li>
+                    <li className="Popular-item">{item.name}</li>
+                  </ul>
                   </div>
               )
               )
@@ -78,6 +92,8 @@ export default class Menu extends Component {
                   <h1 className="alignleft">Recommended</h1>
                   <h3 className="alignright">Menu</h3>
               </div>
+         
+           
               <div className='dishmain'>
               {this.state.dishes.map((foodList) => (
                   <div className="foodlist" key ="{foodList.id}">
